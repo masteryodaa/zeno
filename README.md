@@ -18,5 +18,6 @@ change the network setting as you want. default is Ganache (change its private k
 ## getLastPayment()
 
 # to test the functions, go to deploy.js and call the functions.
+## run npx hardhat run scripts/deploy.js
 
 # or use it in your own project with ethers.js/web3.js
