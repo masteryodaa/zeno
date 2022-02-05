@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract Zeno is ERC20, ERC20Burnable, Ownable {
     constructor() ERC20("Zeno", "ZENO") {
-        _mint(address(this), 10000000 * 10 ** decimals());
+        _mint(address(this), 10000000);
     }
 
     function getTotalSupply() public view returns (uint) {

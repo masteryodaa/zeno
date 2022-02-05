@@ -1,3 +1,5 @@
+const { ethers } = require("ethers");
+
 const main = async() =>{
 
     const [deployer] = await hre.ethers.getSigners();
@@ -16,17 +18,17 @@ const main = async() =>{
     console.log(`Zeno contract address: ${zenoContractAddress}`);
 
     let totalSupply = await zenoContract.getTotalSupply();
-    console.log(`Total supply: ${hre.ethers.utils.formatEther(totalSupply)}`+" ZENO");
+    console.log(`Total supply: ${totalSupply}`+" ZENO");
 
-    let transferTo = await zenoContract.transferTo("0x89B29F823e1D81ee3FECdB488a10050Aa881821b", 1000000);
+    let transferTo = await zenoContract.transferTo("0x89B29F823e1D81ee3FECdB488a10050Aa881821b", 1000);
     await transferTo.wait();
     console.log("Transfer to success");
 
-    let userBalance = await zenoContract.getUserBalance(deployerAddress);
-    console.log(`User balance: ${userBalance}`+" ZENO");
+    let contractBal = await zenoContract.getUserBalance(zenoContractAddress);
+    console.log(`contract token balance: ${contractBal}`+" ZENO");
 
-    userBalance = await zenoContract.getUserBalance("0x89B29F823e1D81ee3FECdB488a10050Aa881821b");
-    console.log(`User balance: ${userBalance}`+" ZENO");
+    let userBalance = await zenoContract.getUserBalance("0x89B29F823e1D81ee3FECdB488a10050Aa881821b");
+    console.log(`User token balance: ${userBalance}`+" ZENO");
 
 }    
 
