@@ -7,7 +7,7 @@ change the network setting as you want. default is Ganache (change its private k
 ### deploy your smart contract to the network
 ### Few contract functions are provided there.
 
-# List of all functions:
+# List of all Payment functions:
 
 ## getContractBal()
 ## userBal()
@@ -16,6 +16,10 @@ change the network setting as you want. default is Ganache (change its private k
 ## getAllPaymentsHistory()
 ## getPaymentHistoryByAddress(address)
 ## getLastPayment()
+
+# List of all Zeno functions:
+## transferTo(address, zeno amount)
+## getUserBalance(address)
 
 # to test the functions, go to deploy.js and call the functions.
 ## run npx hardhat run scripts/deploy.js

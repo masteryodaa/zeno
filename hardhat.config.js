@@ -25,12 +25,16 @@ module.exports = {
 
     ganache: {
       url: "http://127.0.0.1:7545",
-      accounts: ["310612b3648bdb8dc5f7568cd4b3f1c25181fd8cb0b71c7598a469a3eb788d78"]
+      accounts: ["84706ddc87453e2dd1cb3c8adba8010a63c5dbf8300f412687e521444448aa43"]
     },
     rinkeby: {
       url: "https://eth-rinkeby.alchemyapi.io/v2/Eu7hr-4WpgitKwcKArO0QPgG5xbnToGM",
       accounts: ["87dfe5a2937a450be89eb56faa3b8915a2ccf329c1f8351cbe3687bfa3a8c69f"],
     },
+    matic: {
+      url: "https://polygon-mumbai.g.alchemy.com/v2/Eu7hr-4WpgitKwcKArO0QPgG5xbnToGM",
+      accounts: ["87dfe5a2937a450be89eb56faa3b8915a2ccf329c1f8351cbe3687bfa3a8c69f"],
+    }
 
   },
 

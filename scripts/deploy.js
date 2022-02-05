@@ -9,7 +9,7 @@ const main = async () => {
   console.log(`Deployer balance: ${hre.ethers.utils.formatEther(deployerBalance)}`+" ETH");
 
   const paymentFactory = await hre.ethers.getContractFactory("Payment");
-  const paymentContract = await paymentFactory.deploy({value: hre.ethers.utils.parseEther("2")});
+  const paymentContract = await paymentFactory.deploy({value: hre.ethers.utils.parseEther("1.5")});
   await paymentContract.deployed();
 
   const paymentContractAddress = await paymentContract.address;
@@ -18,14 +18,13 @@ const main = async () => {
   // let getContractBalance = await hre.ethers.provider.getBalance(paymentContractAddress);
   // console.log(`Payment contract balance: ${hre.ethers.utils.formatEther(getContractBalance)}`+" ETH");
 
-  let contractBalance = await paymentContract.getContractBal();
-  console.log(`Payment contract balance: ${hre.ethers.utils.formatEther(contractBalance)}`+" ETH");
+  // let contractBalance = await paymentContract.getContractBal();
+  // console.log(`Payment contract balance: ${hre.ethers.utils.formatEther(contractBalance)}`+" ETH");
 
 
-
-  let pay = await paymentContract.pay("0xe3e31aCCb274301cbD0ECe93967073fFd88dE3EE" ,hre.ethers.utils.parseEther("1"));
-  await pay.wait();
-  console.log("Payment done");
+  // let pay = await paymentContract.pay("0xe3e31aCCb274301cbD0ECe93967073fFd88dE3EE" ,hre.ethers.utils.parseEther("1"));
+  // await pay.wait();
+  // console.log("Payment done");
 
   // pay = await paymentContract.pay("0xF19DDb5511f1199d51e970c78a13c45F02A72035" ,hre.ethers.utils.parseEther("1"));
   // await pay.wait();
@@ -56,12 +55,12 @@ const main = async () => {
   contractBalance = await paymentContract.getContractBal();
   console.log(`Payment contract balance: ${hre.ethers.utils.formatEther(contractBalance)}`+" ETH");
 
-  const deposit = await paymentContract.depositInContract({value: hre.ethers.utils.parseEther("0.1")});
-  await deposit.wait();
-  console.log("Deposit success");
+  // const deposit = await paymentContract.depositInContract({value: hre.ethers.utils.parseEther("0.1")});
+  // await deposit.wait();
+  // console.log("Deposit success");
 
-  contractBalance = await paymentContract.getContractBal();
-  console.log(`Payment contract balance: ${hre.ethers.utils.formatEther(contractBalance)}`+" ETH");
+  // contractBalance = await paymentContract.getContractBal();
+  // console.log(`Payment contract balance: ${hre.ethers.utils.formatEther(contractBalance)}`+" ETH");
 
 }
 

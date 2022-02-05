@@ -36,7 +36,7 @@ contract Payment {
         paymentsMap[_to].to = _to;
         _to.transfer(_amount);
         paymentsArray.push(Pay(_to, _amount, block.timestamp));
-        console.log("Payment Done of %s to %s", _amount, _to);
+        console.log("Payment Done of %s to %s", _amount, _to);  
     }
 
     function depositInContract() external payable {
